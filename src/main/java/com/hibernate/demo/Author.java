@@ -21,7 +21,7 @@ public class Author {
     private String date;
     @ElementCollection
     private List < String > subjects = new ArrayList<>();
-    @OneToMany @org.hibernate.annotations.Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @ManyToMany @org.hibernate.annotations.Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List <Book> list ;
 
 

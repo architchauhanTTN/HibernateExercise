@@ -19,8 +19,9 @@ public class Application {
         Book book = new Book("RS AGRAWAL");
         bookList.add(book);
         Book book1 = new Book("JDYADAV");
-
+        List < Author > authors = new ArrayList<>();
         bookList.add(book1);
+
 
 //        bookList1.add(new Book("RD SHARMA"));
 //        bookList1.add(new Book("NandLal DayaRam"));
@@ -33,14 +34,23 @@ public class Application {
         list1.add("DBMS");
         list1.add("COA");
 //        Author author = new Author("ABCD" , "IJKL" , 21 , "19-09-1987" ,  list , new Book("RS Agarwal") , new Address("Noida" , 122));
-//        Author author1 = new Author("EFGH" , "MNOP" , 19 , "9-10-1999" , list1 , new Book("RD SHARMA") , new Address("Delhi" , 22));
+     //   Author author1 = new Author("EFGH" , "MNOP" , 19 , "9-10-1999" , list1 , new Book("RD SHARMA") , new Address("Delhi" , 22));
         Author author = new Author("Akash" , "Gupta"  ,21 , "19-09-1999" ,  list ,bookList  ,  new Address("Noida" , 122));
-        book.setAuthor(author);
-        book1.setAuthor(author);
+        Author author2 = new Author("Archit" , "Chauhan"  ,22 , "19-09-1999" ,  list ,bookList  ,  new Address("Gugraon" , 122));
+        Author author3 = new Author("yash" , "Chauhan"  ,20 , "19-09-1999" ,  list ,bookList  ,  new Address("Benguluru" , 122));
+
+        authors.add(author);
+        authors.add(author2);
+
+        book.setAuthorList(authors);
+       authors.add(author3);
+        book1.setAuthorList(authors);
         session.save(book);
-        session.save(book);
+
         session.save(book1);
         session.save(author);
+        session.save(author2);
+        session.save(author3);
 //        session.save(author1);
 //        session.save(author2);
 //        session.save(author3);

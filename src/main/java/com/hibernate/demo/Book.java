@@ -1,14 +1,15 @@
 package com.hibernate.demo;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  Integer bookId;
-    @ManyToOne
-    private Author author;
+    @ManyToMany
+    private List < Author > authorList;
     private String bookName;
     public Book(){
 
@@ -26,12 +27,12 @@ public class Book {
         this.bookId = bookId;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<Author> getAuthorList() {
+        return authorList;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthorList(List<Author> authorList) {
+        this.authorList = authorList;
     }
 
     public String getBookName() {
